@@ -1,0 +1,199 @@
+\section{Kernel Issues}
+
+\subsection{Kernel Programming Issues}
+
+\begin{itemize}
+	\item Library functions not available
+	\item Limited Stack - Small, fixed-size stack for each proc
+	\begin{itemize}
+		\item kmalloc args 1=Size of block, 2=how kmalloc works
+		\item GFP\_Kernel - kmalloc puts curnt. proc to sleep, waits for
+			page when called in low mem situations
+		\item Funciton using GFP must be reentrant, otherwise use
+			GFP\_Atomic
+	\end{itemize}
+	\item Kernel functions must be rentrant
+	\item Linux kernel fully preemptible
+	\begin{itemize}
+		\item kernel proc can be preempted by > priority proc
+		\item Should avoid global static vars in network code.
+		\item Need to use spinlock/semaphores to protect access to
+			global structs
+	\end{itemize}
+	\item Linux supports Symmetric Multiprocessor (SMP) architectures
+	\begin{itemize}
+		\item Mutli. processors share common mem, potential issues
+		\item Harder debugging
+		\item Bugs cause catastrophic failure, require reboot
+	\end{itemize}
+\end{itemize}
+
+\subsection{Memory Allocation in the Kernel}
+
+\begin{itemize}
+	\item Slabs \ldots
+\end{itemize}
+
+\subsection{Kernel Scheduling}
+
+\begin{itemize}
+	\item Multi. Scheduling Classes
+	\item Various policies within class
+	\item Higher priority class served first
+	\item Tasks can migrate between classes, policies, CPUs
+	\item Completely Fair Scheduler
+	\begin{itemize}
+		\item Decides which process is executed next
+		\item Uses red-black tree to decide on proc.
+		\item Implements Weighted Fair Queuing
+	\end{itemize}
+\end{itemize}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{c|c}
+		Class & Policies \\
+		\hline
+		Stop & none \\
+		Deadline & SCHED\_DEADLINE \\
+		Real Time (RT) & SCHED\_FIFO, SCHED\_RR \\
+		Fair (CFS) & SCHED\_NORMAL, SCHED\_BATCH, SCHED\_IDLE \\
+		Idle & none\\
+	\end{tabular}
+\end{table}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{c|c}
+		Class & Features \\
+		\hline
+		Stop & SMP-only, cannot be preempted, preemts all \\
+		Deadline & For periodic RT tasks \\
+		Real Time (RT) & for Posix ``real-time`` (low latency) tasks \\
+		Fair (CFS) & All other system tasks \\
+		Idle & Nothing to do - enter low power mode \\
+	\end{tabular}
+\end{table}
+
+\subsection{Symmetric Multiprocessing (SMP)}
+
+\begin{itemize}
+	\item Like parallel processing
+	\item Multi resources share single bus with multi. processors
+	\item Contention for resources
+	\begin{itemize}
+		\item N cores not N times faster than 1
+		\item Need to lock shared resources when in use
+	\end{itemize}
+\end{itemize}
+
+\subsection{Reentrancy and Preemption}
+
+Preemption
+\begin{itemize}
+	\item Stopping code to run other code
+\end{itemize}
+
+Reentrancy
+\begin{itemize}
+	\item Preemting process might call preemted code
+	\begin{itemize}
+		\item Preemnted code must support multi. execution instances
+	\end{itemize}
+\end{itemize}
+
+\subsection{Writing reentrant code}
+
+\begin{itemize}
+	\item Avoid global vars, use automatic vars/kmalloc instead
+	\item Use spinlock/semaphors to ensure global var access is atomic
+	\item Do not call other functions, unless they are reentrant
+	\item Accessing HW causes issues, use spinlock/semaphores to lock out
+		other proc.
+	\begin{itemize}
+		\item Causes bad RT performance
+		\item Fix - Disable interrupts
+		\item Most interrupt handlers do this
+	\end{itemize}
+\end{itemize}
+
+\subsection{Spinlock}
+
+\begin{itemize}
+	\item Crude method to protect data struct
+	\item Single int field as lock
+	\begin{itemize}
+		\item Proc withing to access protected region must check lock
+			val
+		\item If 1: proc. retries (spins) in tight loop of code
+		\item If 0: proc. enters region, sets value to 1
+	\end{itemize}
+	\item Accessing mem location must be atomic - cannot be interrupted
+	\item Winning proc is random/arbitrary
+\end{itemize}
+
+\subsection{Semaphores}
+
+\begin{itemize}
+	\item Protect critical regions of code/data structs
+	\item Queueing mechanism to give order to access
+	\item Count
+	\begin{itemize}
+		\item Num of proc waiting for resource
+		\item +: resource available
+		\item -/0: procs waiting
+		\item Initially set to 1
+		\item Requesting resource dec. count
+		\item Proc finished - inc. count
+		\item Abs val of count = num of sleepers
+	\end{itemize}
+	\item Wait
+	\begin{itemize}
+		\item Queue in which sleeping procs stored
+	\end{itemize}
+\end{itemize}
+
+\subsection{HW Interrupts}
+
+\begin{itemize}
+	\item I/O Interrupts
+	\begin{itemize}
+		\item Keyboard Press, USB bus has data, pkt arrives in NIC
+	\end{itemize}
+	\item Timer Interrupts
+	\begin{itemize}
+		\item Maintaining System Clock, Executing sched alg
+	\end{itemize}
+	\item Interprocesspr Interrupts (IPI)
+	\begin{itemize}
+		\item Only in SMP systems
+		\item On ARM processors
+		\begin{itemize}
+			\item IPI\_RESCHEDULE ``Rescheduling interrupts``
+			\item IPI\_CALL\_FUNC ``Function call interrupts``
+			\item IPI\_CPU\_STOP ``CPU stop interrupts``
+			\item IPI\_CPI\_CRASH\_STOP ``CPU stop (for crash dump)
+				interrupts``
+			\item IPI\_TIMER ``Timer broadcast interrupts''
+			\item IPI\_IRQ\_WORK ``IRQ work interrupts''
+			\item IPI\_WAKEUP ``CPU wake-up interrupts''
+			\item Used for e.g. power management, moving procs
+				between CPUs
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+\subsection{Timer Interrupts}
+
+\begin{itemize}
+	\item Triggered by Programmable Interval Timer/High Precision Event
+		Clock
+	\begin{itemize}
+		\item ISR (interrupt service routine) implement jiffy clock,
+			invoke proc scheduling
+	\end{itemize}
+	\item SMP systems have local CPU timers
+	\begin{itemize}
+		\item Used for profiling kernel code, timing procs.
+	\end{itemize}
+\end{itemize}

@@ -1,0 +1,125 @@
+\section{Intro}
+
+\subsection{Userspace vs Kernel}
+
+\begin{itemize}
+	\item Modern processors have 2 modes of operation
+	\begin{itemize}
+		\item Intel - Ring 0/3
+		\item ARM - Supervisor/User
+	\end{itemize}
+	\item Code in Ring 0 > Priority than Ring 3
+	\begin{itemize}
+		\item More instructions from set
+		\item More resource access
+	\end{itemize}
+	\item Allow for improved security
+	\item System code = kernel
+\end{itemize}
+
+\subsection{Monolithic vs Microkernel}
+
+\begin{itemize}
+	\item Monolithic
+	\begin{itemize}
+		\item 1 multi-tasking prog. implements OS funcitons
+		\begin{itemize}
+			\item Add new functionality requires kernel rebuild
+			\item Linux, FreeBSD
+		\end{itemize}
+	\end{itemize}
+	\item Microkernel
+	\begin{itemize}
+		\item Most services run in userlan, min. code is privileged
+		\item Enhances modularity/maintainability at expense of
+			performance
+		\item Mach, GNU Hurd, Minix 3
+	\end{itemize}
+	\item Hybrid Kernel/Macrokernel
+	\begin{itemize}
+		\item Most services run on microkernel on Ring 0
+		\item Windows > NT
+	\end{itemize}
+\end{itemize}
+
+\subsection{Loadable Modules}
+
+\begin{itemize}
+	\item Dynamically loaded at runtime
+	\item Access kernel structures/methods which have been exported
+\end{itemize}
+
+\subsection{OSI Model Limitations}
+
+\begin{itemize}
+	\item OSI Model is approx. guide
+	\begin{itemize}
+		\item Session/Presentation not in most networked apps
+		\item Tunneling can result in multi. stacked L3 protocols
+		\item Ethernet Swithces nominally operate at L2, supposed to be
+			``data-link`` protocol layer.
+		\item Control plane does not feature in model
+	\end{itemize}
+\end{itemize}
+
+\subsection{Bit Rates and Packet Rates}
+
+Packet Rates depend on:
+
+\begin{itemize}
+	\item Physical Bit Rate
+	\item OH
+	\begin{itemize}
+		\item Extra bits + by lower layers/protocol features
+	\end{itemize}
+	\item Pkt length
+	\item Physical BR vary from V.Low to V.High
+	\item Useable BR < Nominal BR
+	\begin{itemize}
+		\item To inc. data transfer rate of X from Transport to higher
+			layers, bit rate at phy layer must be \gg X
+	\end{itemize}
+	\item Net SW must be written so net equip can operate at wire speed
+	\begin{itemize}
+		\item HW and SW in net device rd/wr 2 pkts from link w/o dead time
+	\end{itemize}
+\end{itemize}
+
+\subsection{Headers/Trailers}
+
+\begin{itemize}
+	\item Each pkt comprises of Protocol Data Unit and new layers head/tail
+	\item Exception: Multiplexing, Fragmentation/Re-Assembly
+\end{itemize}
+
+\subsection{Buffer Management}
+
+\begin{itemize}
+	\item Memory space (``socket buffer``) req. to store data varies between
+		layers
+	\item Solutions:
+	\begin{itemize}
+		\item Allocate new buffer
+		\begin{itemize}
+			\item Buffer contents PBV, cp to larger buffer (with
+				offset for header)
+			\begin{itemize}
+				\item Lots of cp ops.
+			\end{itemize}
+		\end{itemize}
+		\item Oversized Linear Buffers (Linux)
+		\begin{itemize}
+			\item How big skt buff is at lowest level implemented
+			\item Allocate buffer of this size, offset pointer to it
+				by aggregate size of lower level headers
+			\item Good performance, breaches layering principle
+		\end{itemize}
+		\item Linked Minibuffers (BSD Unix)
+		\begin{itemize}
+			\item Header/PDU/Tailer stored as linked list
+			\item Head/Tail + by inserting minibuffers at start/end
+				of list
+			\item Memory-efficient, lower performance
+		\end{itemize}
+	\end{itemize}
+\end{itemize}

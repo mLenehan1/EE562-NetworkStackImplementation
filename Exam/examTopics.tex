@@ -1,0 +1,138 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[UKenglish]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	top=20mm,
+	headheight=9pt,
+	bottom=20mm,
+}
+\pagestyle{empty}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\thispagestyle{empty}
+	\begin{table}[h]
+		\centering
+		\caption{EE562 Network Stack Implementation Exam
+		Topic List}
+		\begin{tabular}{|c||c|c||c|c||c||c|c||c|c||}
+			\hline
+			\hline
+			Topic & 2019 & R & 2018 & R & 2017 & 2016 & R & 2015 & R\\
+			\hline
+			Packet Processing & \checkmark & \checkmark &
+					  &\checkmark & & \checkmark & & & \\
+			Symmetric Multiprocessing & \checkmark& & & & & & & & \\
+			Spinlock & \checkmark& \checkmark& \checkmark & & & & &
+				 & \\
+			Read-Copy-Update (RCU) & \checkmark& \checkmark & & & &
+					       & & & \\
+			802.11 Modes & \checkmark& & \checkmark&\checkmark & & &
+				     & & \\
+			802.11 Config Task Distribution & \checkmark& & & & & &
+							& & \\
+			Weighted Fair Queueing & \checkmark& & & & & & & & \\
+			Linux Device Driver Code & \checkmark& \checkmark&
+			\checkmark & & \checkmark & \checkmark & \checkmark &
+			\checkmark & \checkmark \\
+			Linux Kernel Real-Time Processing & \checkmark& &
+							  &\checkmark & &
+			\checkmark & & & \\
+			Longest Prefix Match & \checkmark & \checkmark & & & & &
+					     & & \\
+			Forwarding Information Base & \checkmark & \checkmark &
+						    & \checkmark & & & & & \\
+			Open Flow & & \checkmark & \checkmark&\checkmark & & & &
+				  & \\
+			Stochastic Fairness Queueing & & \checkmark & & & & & &
+						     & \\
+			Completely Fair Scheduler & & \checkmark & \checkmark
+						  & \checkmark & & & & & \\
+			Flow Diagram of TCP Packet & & \checkmark & \checkmark
+						   &\checkmark & & & &
+			\checkmark & \\
+			Socket Buffers & & \checkmark & &\checkmark & \checkmark
+				       & \checkmark & \checkmark & & \checkmark \\
+			802.11 Interfaces - TX & & \checkmark & \checkmark &
+			\checkmark & & & & & \\
+			802.11 Interfaces - RX & & \checkmark & \checkmark &
+			\checkmark & & & & & \\
+			Packet Switched Network & & & \checkmark & & & & & & \\
+			SDN & & & \checkmark & & & & & & \\
+			Semaphores & & & \checkmark & & \checkmark & & & & \\
+			Generic Segmentation Offload & & & \checkmark &
+			\checkmark & & & & & \\
+			Generic Recieve Offload & & & \checkmark & \checkmark &
+						& & & & \\
+			Large Receive Offload & & & \checkmark & \checkmark & &
+					      & & & \\
+			Fragmentation Routine & \checkmark & & \checkmark &
+			\checkmark & & & & \checkmark & \checkmark \\
+			Resource Reservation Protocol (RSVP) & & & \checkmark & &
+			\checkmark & \checkmark & & \checkmark & \checkmark \\
+			OS Architectures & & & & \checkmark & & & & & \\
+			Code Analysis - Socket Interaction & & & & & \checkmark
+							   & \checkmark &
+			\checkmark & & \\
+			Cloud Computing & & & & & \checkmark & \checkmark & & & \\
+			SMTP & & & & & \checkmark & \checkmark & & \checkmark & \\
+			Scheduling Algorithms & & & & & \checkmark & \checkmark
+					      & & & \\
+			Server-Side Architectures & & & & & \checkmark &
+			\checkmark & \checkmark & & \\
+			JDBC & & & & & \checkmark & & & & \\
+			Code Analysis - HTML & & & & & \checkmark & & & & \\
+			Porting to ARM & & & & & \checkmark & & & & \\
+			IntServ & & & & & \checkmark & & & & \\
+			DiffServ & & & & & \checkmark & & & & \\
+			Document Types & & & & & & \checkmark & & & \\
+			Remote Method Invocation (RMI) & & & & & & \checkmark &
+						       & \checkmark & \\
+			HTTP Enhancements & & & & & & \checkmark & & & \\
+			Multimedia Transport Protocol & & & & & & & \checkmark
+						      & \checkmark & \\
+			Unicast, Multicast, Broadcast & & & & & & & \checkmark
+						      & \checkmark & \\
+			Process States & & & & & & & \checkmark & & \\
+			HTTP Protocol & & & & & & & \checkmark & & \\
+			ICMP & & & & & & & \checkmark & \checkmark & \\
+			Sessions and Cookies & & & & & & & \checkmark & &
+			\checkmark \\
+			E-mail Architecture & & & & & & & & \checkmark & \\
+			JSP Code & & & & & & & & \checkmark & \checkmark \\
+			HTTPS & & & & & & & & \checkmark & \\
+			Applet Life Cycle & & & & & & & & \checkmark & \\
+			Multi-Threaded TCP Sockets & & & & & & & & \checkmark & \\
+			Code Analysis - RMI & & & & & & & & \checkmark & \\
+			Java Media Framework & & & & & & & & \checkmark & \\
+			RTP, RTCP, RTSP & & & & & & & & & \checkmark \\
+			PHP & & & & & & & & & \checkmark \\
+			Applet Security & & & & & & & & & \checkmark \\
+			UDP Client Communication & & & & & & & & & \checkmark \\
+			FTP & & & & & & & & & \checkmark \\
+			Client-Server Application & & & & & & & & & \checkmark
+			\\
+			TCP Handshake & & & & & & & & & \checkmark \\
+			\hline
+			\hline
+		\end{tabular}
+	\end{table}
+\end{document}
