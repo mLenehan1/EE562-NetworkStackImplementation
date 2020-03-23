@@ -1,0 +1,14 @@
+\subsection{Completely Fair Scheduler}
+
+The completely fair scheduler is the currently used scheduling algorithm in the
+Linux kernel. The algorithm was merged into the codebase for the release of
+version 2.6.23 (current release is 5.5.4) This scheduling algorithm is based on
+CPU power sharing, rather than CPU time sharing, as used in O(1) scheduling.
+
+CFS utilises ``Red-Black'' trees in order to map the execution order of queued
+processes. The process at the leftmost node in the tree represents the process
+which is to be allocated resources, with new processes being added to the right
+of this node. The tree is traversed, with each process being given a
+predetermined amount of time. This use of red-black trees allows for the removal
+of the arrays used for tracking processes in O(1)
+scheduling\cite{linuxKernelArchives}.

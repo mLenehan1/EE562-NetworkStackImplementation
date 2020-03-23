@@ -1,0 +1,24 @@
+\subsection{Userspce}
+
+As previously mentioned, in userspace, the user application data is found. This
+is also where management services are found. These services include
+the WPA Supplicant, nl80211 configuration utilities, and access point
+authenticators\cite{chou_2015}.
+
+WPA Supplicant supports both WPA and WPA2, and is run as a background process,
+controlling wireless connections. wpa\_supplicant, the implemented Linux kernel
+process, can be configured using a text configuration file on the users machine.
+This process controls aspects of the wlan driver, such as the roaming and 802.11
+authentication and association\cite{wpa_supplicant}.
+
+``iw'' is a configuration utility for nl80211, which is a netlink interface,
+providing management between the kernel and user spaces. iw can be used to
+connect to an access point, modify transmission configuration such as
+transmission bitrates or power, and get the status of the current network
+link\cite{iw}.
+
+``hostapd'' is an authenticator for 802.11AP and 802.1X/WPA/WPA2/EAP/RADIUS. It
+is used to configure the wireless infrastructure, including authenticating
+clients, and setting encryption keys. hostapd provides authentication and
+encryption settings for MAC filtering, ignoring broadcast packets, enabling
+WPA/WPA2, and key management algorithms for WPA/WPA2\cite{hostapd}.

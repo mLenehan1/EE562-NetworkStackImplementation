@@ -1,0 +1,31 @@
+\subsection{802.15.4}
+
+The IEEE 802.15.4 standard gives specification for Low-Rate Wireless Personal Area
+Networks (LR-WPAN). It defines specifications for Layer 1 and 2 protocols (Physical
+and Data Link layers respectively)\cite{ott_2012}. This standard aims to give a platform
+on
+which higher level protocols can be based. The specification allows for data
+rates as low as 20kbps, and is intended for use on low-power devices, allowing
+for extended battery life, due to the low power consumption for data
+transfers\cite{electronics_notes}.
+
+The initial release of this standard occurred in 2003, giving specifications for
+two physical layer implementations, one lower frequency band, and one upper,
+with the upper frequency band being 2.4GHz. Updates have included improvements
+in the available data rates, modulation schemes, the addition of ultra-wide band
+frequency ranges, MAC support, and, with the latest release (802.15.4g),
+physical layer implementations for ``smart neighbourhood
+networks''\cite{electronics_notes}.
+
+There are a number of higher level protocols which make use of the 802.15.4
+standard, including MiWi, 6LoWPAN, WirelessHART, and ISA100.11a. Each of these
+protocols uses the standard for different purposes, such as mesh networking or
+manufacturing automation. One of the most well known of these protocols, Zigbee,
+uses the original 802.15.4 specification, however, due to it's non-open source
+implementation, it is assumed that there will not be an implementation added to
+the Linux kernel\cite{ott_2012}.
+
+IEEE 802.15.4 offers data rates up to 250kbps, with power consumption as low as
+17mA during transmission, and 19mA during receiving. These specifications
+offer advantages for wireless sensors, and other devices, making it a good
+choice for the establishment of Personal Area Networks\cite{ott_2012}.

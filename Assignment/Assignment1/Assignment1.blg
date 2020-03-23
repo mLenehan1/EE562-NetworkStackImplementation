@@ -1,0 +1,22 @@
+[0] Config.pm:304> INFO - This is Biber 2.12
+[0] Config.pm:307> INFO - Logfile is 'Assignment1.blg'
+[37] biber:315> INFO - === Mon Mar 23, 2020, 07:59:04
+[67] Biber.pm:371> INFO - Reading 'Assignment1.bcf'
+[160] Biber.pm:889> INFO - Found 22 citekeys in bib section 0
+[178] Biber.pm:4093> INFO - Processing section 0
+[191] Biber.pm:4254> INFO - Looking for bibtex format file 'sources/biblio.bib' for section 0
+[192] bibtex.pm:1512> INFO - LaTeX decoding ...
+[212] bibtex.pm:1329> INFO - Found BibTeX data source 'sources/biblio.bib'
+[219] Utils.pm:193> WARN - month field 'Aug' in entry 'pabla_2009' is not an integer - this will probably not sort properly.
+[223] Utils.pm:193> WARN - month field 'Apr' in entry 'molnar_2007' is not an integer - this will probably not sort properly.
+[229] Utils.pm:193> WARN - month field 'Mar' in entry 'larabel_2020' is not an integer - this will probably not sort properly.
+[234] Utils.pm:193> WARN - month field 'Mar' in entry 'chou_2015' is not an integer - this will probably not sort properly.
+[254] Utils.pm:193> WARN - month field 'Nov' in entry 'ott_2012' is not an integer - this will probably not sort properly.
+[258] Utils.pm:193> WARN - month field 'Mar' in entry 'schmidt_2017' is not an integer - this will probably not sort properly.
+[282] UCollate.pm:68> INFO - Overriding locale 'en-UK' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[282] UCollate.pm:68> INFO - Overriding locale 'en-UK' defaults 'variable = shifted' with 'variable = non-ignorable'
+[282] Biber.pm:3921> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-UK'
+[282] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-UK'
+[302] bbl.pm:636> INFO - Writing 'Assignment1.bbl' with encoding 'UTF-8'
+[308] bbl.pm:739> INFO - Output to Assignment1.bbl
+[308] Biber.pm:110> INFO - WARNINGS: 6

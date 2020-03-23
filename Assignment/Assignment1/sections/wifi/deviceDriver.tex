@@ -1,0 +1,10 @@
+\subsection{Device Driver}
+
+As previously mentioned, a device must be registered with the ``cfg80211\_ops''
+(nl80211 and cfg80211) system within the driver before use. The device driver is
+responsible for the lower layer operations, including the queueing and transmission
+of the
+data\cite{chou_2015}. The device driver receives information from the mac80211,
+and is converted for transmission. Device drivers must be written in a way that
+is specific to the device hardware, and must contain an implementation of the
+mac80211, cfg80211 and nl80211 systems.

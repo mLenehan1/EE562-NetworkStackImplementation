@@ -1,0 +1,30 @@
+\subsection{IPv4 vs IPv6 Functions}
+
+There are a number of functions used in the Linux kernel for the IPv4 protocol.
+In receiving a packet, the ip\_rcv function checks the addressing of the
+incoming packet, and performs a check on the IP header, length, version, and
+checksums. The ip\_rcv\_finish function then uses the ip\_route\_input function
+to perform routing of the packet. From here, one of the following functions is
+called: a) ip\_local\_deliver: The packet is destined for the local host and
+must be passed to the transport layer for further processing. b) ip\_forward:
+The packet is for another destination and must be forwarded. c) ip\_mr\_input:
+The packet is a multicast packet. Any included IP options are processed using the
+ip\_rcv\_options function\cite{khattak}.
+
+For sending data, the ip\_queue\_xmit function sets the destination of the
+packet. The routing cache can be queried using the ip\_route\_output\_keys
+function to find any cached routes to the destination. This function is called
+via the ip\_route\_output\_ports and ip\_route\_output\_flow functions, which
+check the security of the packet. The ip\_que\_xmit function then creates the
+header for the packet and the ip\_finish\_output function sends the packet.
+Fragmentation can be performed if required using the ip\_fragment
+function\cite{khattak}.
+
+The ip\_fragment function has no parallel in IPv6, as there is no fragmentation
+in IPv6 at intermediate nodes. Fragmentation can only happen at the original
+source of the data\cite{guru99}.
+
+There are, however, a number of functions which do have parallels between IPv4
+and IPv6. For receiving packets, IPv6 has ipv6\_rcv function. This code performs
+many of the same functions as in IPv4, including error checking, packet length
+checking, and version checking\cite{collier_2020}.

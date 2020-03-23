@@ -1,0 +1,16 @@
+There are a number of differences which have been made with the implementation
+of IPv6. One of the most notable is the change from 32 bit IP addresses to 128
+bit IP addresses. This change supports and increase in the total number of
+addresses from $2^{32}$ addresses to  $2^{128}$ addresses\cite{v4v6}. This increase allows
+for the limiting of routing table sizes, and helps to deal with the exhaustion
+of available IPv4 addresses\cite{ietftools}. The Internet of Things will benefit
+greatly from
+this increase in available addresses, as all connected devices can be given
+unique addresses.
+
+Categorization of addresses has changed from the IPv4 model of unicast,
+multicast, and broadcast, to the IPv6 model of unicast, multicast, and anycast.
+With broadcast, all nodes on a network receive the sent packets, even those who
+do not require the message. This creates load on the network. Anycast sends a
+packet to the closest/least expensive node of a group of nodes with the same
+destination address in the routing table\cite{ipcisco}.

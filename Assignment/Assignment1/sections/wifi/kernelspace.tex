@@ -1,0 +1,19 @@
+\subsection{Kernel Space}
+
+In the kernel space, there are three main services which must be explored. These
+services are nl80211, cfg80211, and mac80211\cite{chou_2015}.
+
+``nl80211'' is a netlink interface, which, when used in conjunction with with
+cfg80211 replaces the previously used ``Wireless-Extensions''\cite{nl80211}.
+It is used as an interface between the user and kernel space, and is used to
+configure cfg80211.
+
+``cfg80211'' is an API used for configuring 802.11 on Linux. cfg80211 is used
+when writing wireless drivers for ``fullmac'' devices\cite{cfg80211}. The device
+must be ``registered'' with cfg80211 in the driver before use. Both cfg80211 and
+nl80211 are required in Linux wireless drivers\cite{cfg80211_subsystem}.
+
+For ``softmac'' devices, ``mac80211'' is used. mac80211 is used for frame
+management, and supports the IEEE 802.11a/b/g/n/d/s/r standards\cite{mac80211}.
+mac80211 is implemented in many of the commonly used device drivers for a number of
+vendors, including Broadcom and Intel\cite{drivers}.

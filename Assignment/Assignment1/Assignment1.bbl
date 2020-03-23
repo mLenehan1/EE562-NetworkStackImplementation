@@ -1,0 +1,426 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.0 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{pabla_2009}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=0744857b719e2ed4cfe330eb00c8d269}{%
+           family={Pabla},
+           familyi={P\bibinitperiod},
+           given={Chandandeep\bibnamedelima Singh},
+           giveni={C\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{0744857b719e2ed4cfe330eb00c8d269}
+      \strng{fullhash}{0744857b719e2ed4cfe330eb00c8d269}
+      \strng{bibnamehash}{0744857b719e2ed4cfe330eb00c8d269}
+      \strng{authorbibnamehash}{0744857b719e2ed4cfe330eb00c8d269}
+      \strng{authornamehash}{0744857b719e2ed4cfe330eb00c8d269}
+      \strng{authorfullhash}{0744857b719e2ed4cfe330eb00c8d269}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Linux Journal}
+      \field{month}{8}
+      \field{title}{Completely Fair Scheduler}
+      \field{year}{2009}
+      \verb{urlraw}
+      \verb https://www.linuxjournal.com/node/10267
+      \endverb
+      \verb{url}
+      \verb https://www.linuxjournal.com/node/10267
+      \endverb
+    \endentry
+    \entry{molnar_2007}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=65b9ae3dfe937a98569ee98d99a9ef65}{%
+           family={Molnar},
+           familyi={M\bibinitperiod},
+           given={Ingo},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{65b9ae3dfe937a98569ee98d99a9ef65}
+      \strng{fullhash}{65b9ae3dfe937a98569ee98d99a9ef65}
+      \strng{bibnamehash}{65b9ae3dfe937a98569ee98d99a9ef65}
+      \strng{authorbibnamehash}{65b9ae3dfe937a98569ee98d99a9ef65}
+      \strng{authornamehash}{65b9ae3dfe937a98569ee98d99a9ef65}
+      \strng{authorfullhash}{65b9ae3dfe937a98569ee98d99a9ef65}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{[patch] Modular Scheduler Core and Completely Fair Scheduler [CFS] [LWN.net]}
+      \field{month}{4}
+      \field{title}{[patch] Modular Scheduler Core and Completely Fair Scheduler [CFS]}
+      \field{year}{2007}
+      \verb{urlraw}
+      \verb https://lwn.net/Articles/230501/
+      \endverb
+      \verb{url}
+      \verb https://lwn.net/Articles/230501/
+      \endverb
+    \endentry
+    \entry{linuxKernelArchives}{misc}{}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Linux Kernel Archives}
+      \field{title}{CFS Scheduler}
+      \verb{urlraw}
+      \verb https://www.kernel.org/doc/Documentation/scheduler/sched-design-CFS.txt
+      \endverb
+      \verb{url}
+      \verb https://www.kernel.org/doc/Documentation/scheduler/sched-design-CFS.txt
+      \endverb
+    \endentry
+    \entry{larabel_2020}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=b51b9464b5589cf5380e3b897d0a43b6}{%
+           family={Larabel},
+           familyi={L\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{b51b9464b5589cf5380e3b897d0a43b6}
+      \strng{fullhash}{b51b9464b5589cf5380e3b897d0a43b6}
+      \strng{bibnamehash}{b51b9464b5589cf5380e3b897d0a43b6}
+      \strng{authorbibnamehash}{b51b9464b5589cf5380e3b897d0a43b6}
+      \strng{authornamehash}{b51b9464b5589cf5380e3b897d0a43b6}
+      \strng{authorfullhash}{b51b9464b5589cf5380e3b897d0a43b6}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Phoronix}
+      \field{month}{3}
+      \field{title}{Linux CFS Improvement Forthcoming To Help With Faster Spreading Of CPU Utilization}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://www.phoronix.com/scan.php?page=news_item&px=Linux-CFS-Spread-Util-Better
+      \endverb
+      \verb{url}
+      \verb https://www.phoronix.com/scan.php?page=news_item&px=Linux-CFS-Spread-Util-Better
+      \endverb
+    \endentry
+    \entry{chou_2015}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=e0b0dc02e94b5f3710f222a22a4f8b64}{%
+           family={Chou},
+           familyi={C\bibinitperiod},
+           given={Fred},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{e0b0dc02e94b5f3710f222a22a4f8b64}
+      \strng{fullhash}{e0b0dc02e94b5f3710f222a22a4f8b64}
+      \strng{bibnamehash}{e0b0dc02e94b5f3710f222a22a4f8b64}
+      \strng{authorbibnamehash}{e0b0dc02e94b5f3710f222a22a4f8b64}
+      \strng{authornamehash}{e0b0dc02e94b5f3710f222a22a4f8b64}
+      \strng{authorfullhash}{e0b0dc02e94b5f3710f222a22a4f8b64}
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Linux.com}
+      \field{month}{3}
+      \field{title}{Linux Wireless Networking: a short walk}
+      \field{year}{2015}
+      \verb{urlraw}
+      \verb https://www.linux.com/training-tutorials/linux-wireless-networking-short-walk/
+      \endverb
+      \verb{url}
+      \verb https://www.linux.com/training-tutorials/linux-wireless-networking-short-walk/
+      \endverb
+    \endentry
+    \entry{wpa_supplicant}{misc}{}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Linux WPA Supplicant (IEEE 802.1X, WPA, WPA2, RSN, IEEE 802.11i)}
+      \field{title}{Linux WPA/WPA2/IEEE 802.1 Supplicant}
+      \verb{urlraw}
+      \verb http://w1.fi/wpa_supplicant/
+      \endverb
+      \verb{url}
+      \verb http://w1.fi/wpa_supplicant/
+      \endverb
+    \endentry
+    \entry{iw}{misc}{}
+      \field{sortinit}{9}
+      \field{sortinithash}{1dd72ab054147731c9d824b49aba0534}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{en:users:documentation:iw [Linux Wireless]}
+      \field{title}{Linux Wireless - About iw}
+      \verb{urlraw}
+      \verb https://wireless.wiki.kernel.org/en/users/documentation/iw
+      \endverb
+      \verb{url}
+      \verb https://wireless.wiki.kernel.org/en/users/documentation/iw
+      \endverb
+    \endentry
+    \entry{hostapd}{misc}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{en:users:documentation:hostapd [Linux Wireless]}
+      \field{title}{Linux Wireless - About hostapd}
+      \verb{urlraw}
+      \verb https://wireless.wiki.kernel.org/en/users/documentation/hostapd
+      \endverb
+      \verb{url}
+      \verb https://wireless.wiki.kernel.org/en/users/documentation/hostapd
+      \endverb
+    \endentry
+    \entry{nl80211}{misc}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{en:developers:documentation:nl80211 [Linux Wireless]}
+      \field{title}{Linux Wireless - About nl80211}
+      \verb{urlraw}
+      \verb https://wireless.wiki.kernel.org/en/developers/documentation/nl80211#dokuwiki__top
+      \endverb
+      \verb{url}
+      \verb https://wireless.wiki.kernel.org/en/developers/documentation/nl80211#dokuwiki__top
+      \endverb
+    \endentry
+    \entry{cfg80211}{misc}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{en:developers:documentation:cfg80211 [Linux Wireless]}
+      \field{title}{Linux Wireless - About cfg80211}
+      \verb{urlraw}
+      \verb https://wireless.wiki.kernel.org/en/developers/documentation/cfg80211
+      \endverb
+      \verb{url}
+      \verb https://wireless.wiki.kernel.org/en/developers/documentation/cfg80211
+      \endverb
+    \endentry
+    \entry{cfg80211_subsystem}{misc}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{cfg80211 subsystem - The Linux Kernel documentation}
+      \field{title}{cfg80211 subsystem¶}
+      \verb{urlraw}
+      \verb https://www.kernel.org/doc/html/latest/driver-api/80211/cfg80211.html
+      \endverb
+      \verb{url}
+      \verb https://www.kernel.org/doc/html/latest/driver-api/80211/cfg80211.html
+      \endverb
+    \endentry
+    \entry{mac80211}{misc}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{en:developers:documentation:mac80211 [Linux Wireless]}
+      \field{title}{Linux Wireless - About mac80211}
+      \verb{urlraw}
+      \verb https://wireless.wiki.kernel.org/en/developers/documentation/mac80211
+      \endverb
+      \verb{url}
+      \verb https://wireless.wiki.kernel.org/en/developers/documentation/mac80211
+      \endverb
+    \endentry
+    \entry{drivers}{misc}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{en:users:drivers [Linux Wireless]}
+      \field{title}{Linux Wireless - Existing Linux Wireless Drivers}
+      \verb{urlraw}
+      \verb https://wireless.wiki.kernel.org/en/users/drivers
+      \endverb
+      \verb{url}
+      \verb https://wireless.wiki.kernel.org/en/users/drivers
+      \endverb
+    \endentry
+    \entry{v4v6}{misc}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IBM Knowledge Center}
+      \field{title}{Comparison of IPv4 and IPv6}
+      \verb{urlraw}
+      \verb https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_72/rzai2/rzai2compipv4ipv6.htm
+      \endverb
+      \verb{url}
+      \verb https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_72/rzai2/rzai2compipv4ipv6.htm
+      \endverb
+    \endentry
+    \entry{ietftools}{misc}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IETF Tools}
+      \field{title}{The Recommendation for the IP Next Generation Protocol}
+      \verb{urlraw}
+      \verb https://tools.ietf.org/html/rfc1752#page-7
+      \endverb
+      \verb{url}
+      \verb https://tools.ietf.org/html/rfc1752#page-7
+      \endverb
+    \endentry
+    \entry{ipcisco}{misc}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IpCisco}
+      \field{title}{Unicast, Broadcast, Multicast, Anycast ⋆ IpCisco}
+      \verb{urlraw}
+      \verb https://ipcisco.com/lesson/unicast-broadcast-multicast-anycast/
+      \endverb
+      \verb{url}
+      \verb https://ipcisco.com/lesson/unicast-broadcast-multicast-anycast/
+      \endverb
+    \endentry
+    \entry{khattak}{article}{}
+      \name{author}{1}{}{%
+        {{hash=eec13df056c2976e4138b0a457034145}{%
+           family={Khattak},
+           familyi={K\bibinitperiod},
+           given={Fida\bibnamedelima Ullah},
+           giveni={F\bibinitperiod\bibinitdelim U\bibinitperiod}}}%
+      }
+      \strng{namehash}{eec13df056c2976e4138b0a457034145}
+      \strng{fullhash}{eec13df056c2976e4138b0a457034145}
+      \strng{bibnamehash}{eec13df056c2976e4138b0a457034145}
+      \strng{authorbibnamehash}{eec13df056c2976e4138b0a457034145}
+      \strng{authornamehash}{eec13df056c2976e4138b0a457034145}
+      \strng{authorfullhash}{eec13df056c2976e4138b0a457034145}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{IP Layer Implementation of Linux Kernel Stack}
+      \verb{urlraw}
+      \verb https://wiki.aalto.fi/download/attachments/70789059/linux-kernel-ip.pdf
+      \endverb
+      \verb{url}
+      \verb https://wiki.aalto.fi/download/attachments/70789059/linux-kernel-ip.pdf
+      \endverb
+    \endentry
+    \entry{guru99}{misc}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Guru99}
+      \field{title}{IPv4 vs IPv6: What's the Difference?}
+      \verb{urlraw}
+      \verb https://www.guru99.com/difference-ipv4-vs-ipv6.html
+      \endverb
+      \verb{url}
+      \verb https://www.guru99.com/difference-ipv4-vs-ipv6.html
+      \endverb
+    \endentry
+    \entry{collier_2020}{article}{}
+      \name{author}{1}{}{%
+        {{hash=96223fd7e83c0d952ad097a80057c4e2}{%
+           family={Collier},
+           familyi={C\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{96223fd7e83c0d952ad097a80057c4e2}
+      \strng{fullhash}{96223fd7e83c0d952ad097a80057c4e2}
+      \strng{bibnamehash}{96223fd7e83c0d952ad097a80057c4e2}
+      \strng{authorbibnamehash}{96223fd7e83c0d952ad097a80057c4e2}
+      \strng{authornamehash}{96223fd7e83c0d952ad097a80057c4e2}
+      \strng{authorfullhash}{96223fd7e83c0d952ad097a80057c4e2}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{EE562 - Network Stack Implementation}
+      \field{year}{2020}
+    \endentry
+    \entry{ott_2012}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=07b33c23c2b2458c80e00ddd4b660b30}{%
+           family={Ott},
+           familyi={O\bibinitperiod},
+           given={Alan},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{07b33c23c2b2458c80e00ddd4b660b30}
+      \strng{fullhash}{07b33c23c2b2458c80e00ddd4b660b30}
+      \strng{bibnamehash}{07b33c23c2b2458c80e00ddd4b660b30}
+      \strng{authorbibnamehash}{07b33c23c2b2458c80e00ddd4b660b30}
+      \strng{authornamehash}{07b33c23c2b2458c80e00ddd4b660b30}
+      \strng{authorfullhash}{07b33c23c2b2458c80e00ddd4b660b30}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{11}
+      \field{title}{Wireless Networking with IEEE 802.15.4 and 6LoWPAN}
+      \field{year}{2012}
+      \verb{urlraw}
+      \verb https://elinux.org/images/7/71/Wireless_Networking_with_IEEE_802.15.4_and_6LoWPAN.pdf
+      \endverb
+      \verb{url}
+      \verb https://elinux.org/images/7/71/Wireless_Networking_with_IEEE_802.15.4_and_6LoWPAN.pdf
+      \endverb
+    \endentry
+    \entry{electronics_notes}{misc}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Electronics Notes}
+      \field{title}{IEEE 802.15.4 Standard: a tutorial / primer}
+      \verb{urlraw}
+      \verb https://www.electronics-notes.com/articles/connectivity/ieee-802-15-4-wireless/basics-tutorial-primer.php
+      \endverb
+      \verb{url}
+      \verb https://www.electronics-notes.com/articles/connectivity/ieee-802-15-4-wireless/basics-tutorial-primer.php
+      \endverb
+    \endentry
+    \entry{schmidt_2017}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=a1fb64eebbb14d96534a24e7ebc86273}{%
+           family={Schmidt},
+           familyi={S\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{a1fb64eebbb14d96534a24e7ebc86273}
+      \strng{fullhash}{a1fb64eebbb14d96534a24e7ebc86273}
+      \strng{bibnamehash}{a1fb64eebbb14d96534a24e7ebc86273}
+      \strng{authorbibnamehash}{a1fb64eebbb14d96534a24e7ebc86273}
+      \strng{authornamehash}{a1fb64eebbb14d96534a24e7ebc86273}
+      \strng{authorfullhash}{a1fb64eebbb14d96534a24e7ebc86273}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{title}{Linux-wpan: IEEE 802.15.4 and 6LoWPAN in Linux}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb http://connect.linaro.org.s3.amazonaws.com/bud17/Presentations/BUD17-120 - Linux-wpan- IEEE 802.15.4 and 6LoWPAN in the Linux Kernel.pdf
+      \endverb
+      \verb{url}
+      \verb http://connect.linaro.org.s3.amazonaws.com/bud17/Presentations/BUD17-120%20-%20Linux-wpan-%20IEEE%20802.15.4%20and%206LoWPAN%20in%20the%20Linux%20Kernel.pdf
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

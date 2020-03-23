@@ -51,13 +51,27 @@
 \pagenumbering{alph}
 \input{cover/declaration}
 \pagenumbering{arabic}
-\input{sections/abstract}
 \tableofcontents
 \clearpage
-\section{Introduction}
-\input{sections/introduction}
-\section{Conclusion}
-\input{sections/conclusion}
+\section{Completely Fair Scheduler}
+\input{sections/cfs/sched}
+\input{sections/cfs/cfs}
+\input{sections/cfs/groups}
+\input{sections/cfs/updates}
+\clearpage
+\section{Wi-Fi Support in Linux}
+\input{sections/wifi/intro}
+\input{sections/wifi/userspace}
+\input{sections/wifi/kernelspace}
+\input{sections/wifi/deviceDriver}
+\clearpage
+\section{IPv6 vs. IPv4}
+\input{sections/ip/ipv4v6}}
+\input{sections/ip/ipv4Functions}
+\clearpage
+\section{6LoWPAN and 802.15.4}
+\input{sections/6lowpan/802.15.4}
+\input{sections/6lowpan/6low}
 \clearpage
 \printbibliography
 \end{document}

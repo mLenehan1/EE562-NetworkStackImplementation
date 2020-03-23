@@ -1,0 +1,13 @@
+\subsection{Scheduling Algorithms}
+
+Scheduling algorithms are a way for the kernel to provide CPU resources to
+processes in a balanced way. The original scheduling algorithm used by the
+Linux kernel based it's scheduling on the time a process was running for.
+Processes which require user input require more time on the CPU, as there cannot
+be a perceptible delay in execution of user commands. This original scheduling
+algorithm was of constant time complexity, and as such was named the Linux O(1)
+scheduler\cite{pabla_2009}.
+
+The Completely Fair Scheduler was introduced as an improvement upon the O(1)
+scheduler, improving the time complexity to O(logn), and reducing the scheduling
+codebase by approximately 700 lines\cite{molnar_2007}.

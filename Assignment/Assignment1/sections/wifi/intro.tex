@@ -1,0 +1,8 @@
+Wireless networking in Linux is essentially broken into three sections, these
+sections, as discussed in detail below, are the userspace, kernel space, and
+device driver level. Each processes data at different stages of transmission.
+The userspace deals with the user applications, and also with some management
+processes. The kernelspace deals with network sockets, and network protocols. On
+the management side it deals with MAC implementation. Finally, at the device
+driver level, the information of higher levels is combined and placed in a queue
+for transmission\cite{chou_2015}.
