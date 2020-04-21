@@ -1,0 +1,89 @@
+\section{Socket Buffers}
+
+\subsection{Socket Buffers in Linux}
+
+\begin{itemize}
+	\item sk\_buff struct defines doubly-linked list of socket buffers with
+		extra struct to allow head of list to be found quickly
+	\item Various functions available to manage socket buffers
+	\item Data space created in Linux sk\_buff comprises:
+	\begin{itemize}
+		\item Headroom
+		\item Data
+		\item Tailroom
+	\end{itemize}
+	\item Idea - Pkt being tx, amnt space reserced eq. that req. at L2, even
+		though sk\_buff being created in Transport Layer
+	\item Extra head/tailroom reserved for anticipated req. of lower-layer
+		headers and trailers.
+	\item When pkt rx from higher layer, head/tailroom encroached upon to
+		create extra mem. space required.
+	\item When created by alloc\_skb(), sk\_buff is "all tail".
+	\item skb\_reserve() is called in to reserve headroom
+	\item Space for data created using skb\_push() (bite into headroom) or
+		skb\_put() (bite into tailroom)
+	\item sk\_buff will be queued in doubly-linked list by protocol handler
+	\item Following atomic func. avvailable to manipulate such lists (each
+		list assoc. with socket):
+	\begin{itemize}
+		\item skb\_queue\_head() - Places buffer at start of list
+		\item skb\_queue\_tail() - Places buffer at end of list
+		\item skb\_dequeue() - Takes first buffer from list, returns
+			pointer to sk\_buff or Null if queue empty
+		\item skb\_insert(), skb\_append() - Place sk\_buff before/after
+			specific buffer in list. Useful for pkt resequencing in
+			TCP
+		\item kfree\_skb() - Releases a buffer
+		\item skb\_unlink() - Extracts sk\_buff from the list in which
+			it is stored (w/o needing to know list identity) does
+			not free it.
+		\item skb\_clone(), skb\_copy() - Makes a copy of an sk\_buff
+		\begin{itemize}
+			\item Former doesn't copy data area (thus has much lower
+				OH than skb\_copy())
+			\item Disadvantage is that data area in cloned buffer is
+				read-only
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+\subsection{Non-Linear Socket Buffers in Linux}
+
+\begin{itemize}
+	\item Two forms of non-linear buffers supported:
+	\begin{itemize}
+		\item Paged Buffers
+		\begin{itemize}
+			\item Large buffers may be neededif L2 supports e.g.
+				64kB frames, or if using some HW acceleration
+				methods
+		\end{itemize}
+		\item Fragmented Buffers
+		\begin{itemize}
+			\item When pkt is being reassembled from its fragments,
+				data is assembled using linked list, to avoid
+				buffer copying
+		\end{itemize}
+	\end{itemize}
+	\item data\_len records pages in socket buffer, and so is 0 for
+		"ordinary" linear buffers
+\end{itemize}
+
+\subsection{Hack for 64-bit Systems}
+
+\begin{itemize}
+	\item In moving from v2.6.21 -> .22 of kernel, hack used to reduce size
+		of skb\_tail and skb\_end to 4 from 8 bytes.
+	\begin{itemize}
+		\item Change never documented.
+	\end{itemize}
+	\item Tail and End are now offsets, specifically the no. of bytes
+		between head and tail of bff.
+	\item transport\_header, network\_header, and mac\_header fields in
+		struct now offsets, rather than pointers.
+	\item No longer safe in versions > 2.6.22 to directly access these
+		fields
+	\begin{itemize}
+		\item Inline functions defined to compute relevant values safely
+	\end{itemize}
+\end{itemize}

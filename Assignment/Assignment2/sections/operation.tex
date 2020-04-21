@@ -1,0 +1,80 @@
+The main feature of a red-black tree is it's ability to maintain balance. It
+does this through a number of operations. On adding a new value to to tree, an
+Insertion operation is used to define where within the tree the new value will
+be placed. On deleting a value from the tree, the tree must be restructured in
+order to allow any child node of the deleted node to remain connected to the
+rest of the tree. Recoloring is a technique which is unique to Red-Black Trees,
+and allows for a tree to be rebalanced without using a rotation operation. If
+recoloring is not successful, rotations are used following these operations to
+ensure that balance is maintained within the tree.
+
+\subsection{Insertion}
+
+Insertions are done based on the value of the incoming node. The incoming node
+value is compared agains the root node value. If the incoming node value is
+greater than the root node value, the comparison is repeated with the root nodes
+right child node. If the incoming node value is less than the root nodes value,
+the comparison is repeated with the root nodes left child node\cite{geeksInsert}
+. This operation
+is typically called recursively in order to traverse the tree until the point
+that there is no left or right child node with which to compare, at which point
+the incoming node can be placed in the tree.
+
+Following the insertion of the incoming node to the tree, the tree must be
+rebalanced. This is to maintain the traversal speed of the tree. Rebalancing is
+done via either recoloring or rotation, as described below.
+
+\subsection{Deletion}
+
+Deletion within a Red-Black tree involves removing the specified value from the
+tree. The specified value is compared to the root node value, and, if greater
+than the root node value, a comparison is made with the right child node value,
+and if less than the root node value, a comparison is made with the left child
+node value. This operation is called recursively until the specified node value
+is found. This node is then deleted from the tree.
+
+If the specified node value is a leaf node, or a node with one child, then this
+deletion is relatively simple. If the node has one child, then the child node
+replaces the deleted node within the tree and a recolouring or rotation must be
+performed. If the node has no children, i.e. is a leaf node, then the node is
+simply deleted\cite{geeksDelete}.
+
+For any node deletion in which the specified node is not a leaf node, or a node
+with only one child, i.e. the specified node is ``internal'', the order of all
+child nodes must be retained, and after deletion must be reordered into the
+existing tree\cite{geeksDelete}. This is, therefore, a much more complex operation.
+
+\subsection{Tree Balancing}
+
+Tree balancing is required in order to maintain the traversal time complexity
+within a red-black tree. The two techniques used in tree balancing are
+``Recoloring'' and ``Rotation''. Recoloring involves changing the colours
+associated with the nodes in the tree, whereas rotation involves moving the
+nodes of the tree, replacing the existing root node.
+
+\subsubsection{Recoloring}
+
+There are a number of cases for recoloring of nodes within a red-black tree. As
+the root node is required to be black, and two red nodes cannot be adjacent,
+the recoloring must be done in such a way as to maintain these rules.
+
+Any new node being inserted to the tree is initially coloured red. The parent
+node colour is then checked. If this node is red, the rule stating that two red
+nodes cannot be directly connected is being violated. The parent node color is
+changed to black, and the colour of the parents parent (i.e. the grandparent),
+is changed to red. Following this, rotations may be required to make a valid
+red-black tree, for example if the grandparent node is the root of the tree
+(which must be black)\cite{geeksInsert}.
+
+\subsubsection{Rotation}
+
+Rotations are used within the red-black tree to rebalance the tree without
+modifying the overall order of the elements in the tree. When a node is
+inserted, recoloring is first performed, however, if this does not result in a
+valid, balaced, red-black tree, a rotation operation must be completed.
+
+Following recolouring, if the root node is red, a left or right rotation must
+occur. If the newly added node is in the left branch, a right rotation occurs,
+and if in the right branch, a left rotation occurs\cite{geeksInsert}.
+These rotations may be
+requied to be done recursively in order to acquire a valid and balanced red-black tree.

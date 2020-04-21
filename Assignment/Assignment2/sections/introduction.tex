@@ -1,0 +1,25 @@
+The Red-Black Tree is an implementation of the Binary Search Tree which
+maintains balance. Nodes of a Red-Black tree are either coloured red or black,
+hence the name. By ensuring that there are never two directly connected red
+nodes, rotate operations ensure that the tree is always balanced.
+
+The concept for this type of binary search tree was instroduced by Rudolf Bayer
+in 1972\cite{wpedia}. They are particularly useful in real-time applications, and as such
+were included in the implementation of the ``Completely Fair Scheduler'' in the
+Linux Kernel in version 2.6.23.
+
+The main advantage of using Red-Black trees is the time complexity. Red-Black
+trees have a time complexity of O(logN) for insertion and deletion operations,
+improving upon the typical complexity of O(N) for more basic Binary Search Tree
+implementations\cite{wpedia}.
+
+For each node in a tree there is a set colour, up to one parent node, and up to
+two child nodes. The root node if a red-black tree is always coloured black,
+along with any null nodes (i.e. empty/leaf nodes). Two red nodes can not be
+directly connected\cite{geeksIntro}. Each left child node in a tree must
+have a value less than the parent node, and each right child node in a tree must
+have a value greater than the parent node. Maintaining balance within the tree
+means that the case of the root node being the lowest value in a constantly
+incrementing tree, i.e. all child nodes are in the right branch, cannot occur.
+This balancing means that the time complexity of traversing the tree does not
+increase past O(logN).

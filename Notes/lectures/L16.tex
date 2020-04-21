@@ -1,0 +1,114 @@
+\section{Binary Trees}
+
+\subsection{Binary Trees}
+
+\begin{itemize}
+	\item Sorted lists needed throughout kernel
+	\begin{itemize}
+		\item Queueing disciplines
+		\item Process scheduling
+		\item Inode management
+		\item Routing tables
+		\item etc,
+	\end{itemize}
+	\item Various types
+	\begin{itemize}
+		\item Radix Tree (not necessarily binary)
+		\begin{itemize}
+			\item Used e.g. in the device driver for the Mellanox
+				Connect X-3 10 Gbe NIC
+		\end{itemize}
+		\item Red-Black Tree
+		\begin{itemize}
+			\item Used in IPv4 FIB (forwarding information base)
+		\end{itemize}
+		\item Used in IPv6 FIB
+	\end{itemize}
+\end{itemize}
+
+\subsection{Balanced Tree}
+
+\subsection{Unbalanced Tree}
+
+\subsection{Tree Rotation}
+
+\begin{itemize}
+	\item A tree can be rebalanced using (multi). rotations
+\end{itemize}
+
+\subsection{Rebalanced Tree}
+
+\subsection{Aside: Trees and Tries}
+
+\begin{itemize}
+	\item The word ``trie'' is the second syllable of ``retrieval''
+	\item Also called prefix tree
+	\item Each vertex represents
+	\begin{itemize}
+		\item Location for value or key (in standard tree)
+		\begin{itemize}
+			\item e.g. the inode of a file
+		\end{itemize}
+		\item A matched pattern (in a trie)
+		\begin{itemize}
+			\item e.g. ``Cam*'' matches
+				``Cam'',``Came'',``Camel''\ldots
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+\subsection{Trie Compression}
+
+\begin{itemize}
+	\item Path Compressions
+	\begin{itemize}
+		\item If a node has only one child, merge node and child
+		\begin{itemize}
+			\item Reduces tree depth
+			\item Increases node storage required
+		\end{itemize}
+		\item Level compression
+		\begin{itemize}
+			\item A node can have  $2^r$ children instead of a max
+				of 2
+			\item r is the radix of the trie
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+\subsection{Patricia Tree}
+
+\begin{itemize}
+	\item A redix tree is a trie featuring path compression and level
+		compression.
+	\item Radix tree with 1/both of these properties
+	\begin{itemize}
+		\item Radix is 1
+		\item PATRICIA algorithm
+		\begin{itemize}
+			\item ``Practical Algorithm To Retrieve Information
+				Coded in Alphanumeric''
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+\subsection{Red-Black Tree}
+
+\begin{itemize}
+	\item Each node is either red/black
+	\begin{itemize}
+		\item Root node always black
+	\end{itemize}
+	\item All leaves (empty terminal nodes) are black - black rectangles
+	\item Num of black nodes traversed in travelling from any node to any of
+		its descendant leaves is the same
+	\begin{itemize}
+		\item Prevents tree imbalance, requires maintenance
+		\item Following insertions/deletions, repair tree
+		\begin{itemize}
+			\item Repaint nodes to retain colour properties
+			\item If repainting does not work use rotations to
+				``fix'' the tree
+		\end{itemize}
+	\end{itemize}
+\end{itemize}

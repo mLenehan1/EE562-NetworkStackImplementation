@@ -1,0 +1,160 @@
+\section{Weighted Fair Queueing}
+
+\subsection{Max-Min Fairness}
+
+\begin{itemize}
+	\item Purpose - Allocate fair share of resource among competing req.
+	\item Suppose:
+	\begin{itemize}
+		\item R units of resource
+		\item n requests
+		\item Fair allocation R/n?
+		\item Some requests for less?
+		\item How to apportion excess?
+	\end{itemize}
+	\item Assume n requests for $d_1, d_2, \ldots d_n$, with $D =
+		\sum_{i=1}^{n} d_i$ and $d_j < d_j+1$
+	\item Assume $D>R$
+	 \begin{itemize}
+		 \item $r_1 = min(D_1,\frac{R}{n})$
+	\end{itemize}
+	\item Now remaining level of resource is $R-r_1$, allocate:
+	\begin{itemize}
+		\item $r_2 = min(d_2, \frac{R-r_1}{n-1})$ etc.
+	\end{itemize}
+	\item Two important Features:
+	\begin{itemize}
+		\item Max num of req. met in full, starting with min request
+		\item Users which req more of resource can be allocaed by alg to
+			receive same allocation
+	\end{itemize}
+	\item Equivalent Algorithm:
+	\begin{itemize}
+		\item Divide R evenly among req.
+		\item For those req. which have received more than required:
+		\begin{itemize}
+			\item Divide excess evenly among outstanding req.
+		\end{itemize}
+		\item Repeat until no excess resources to redistribute
+	\end{itemize}
+\end{itemize}
+
+\subsection{Quality of Service Guarantees}
+
+\begin{itemize}
+	\item FCFS doesn't guarantee BW share to flow
+	\item Use Per-Flow queueing
+	\item Principle - Generalised Processor Sharing
+	\begin{itemize}
+		\item Assume traffic on flow is a fluid, can be continuously
+			subdivided, is possible to offer service to
+			infinitesimal quantity of traffic on a flow
+		\item Can devise a scheme to give exactly req. proportion of BW
+			to each flow
+		\item Practical systems, pkts indivisible, can only approximate
+	\end{itemize}
+\end{itemize}
+
+\subsection{Generalised Processor Sharing}
+
+\begin{itemize}
+	\item Aka Fluid-Flow Fair Queuing
+	\item Offers max-min fiar share of BW to each flow
+	\item When all flows busy, each gets req. share of avail. BW
+	\item When only some flows busy BW share of idle flows allocated in
+		max-min fair way to backlogged flows
+	\item Let $S_i(t, t +\delta t)$ be amnt data from flow i served in
+		interval $[t, t+\delta t]$
+	\item If flow i backlogged during interval, for any flow j:
+	\begin{itemize}
+		\item $\frac{S_i(t, t+\delta t)}{S_j(t, t+\delta t)} \ge
+			\frac{\delta_i}{\delta_j}$
+	\end{itemize}
+\end{itemize}
+
+\subsection{Weigthed Fair Queuing}
+
+\begin{itemize}
+	\item Round Time units - bits served per flow
+	\item As no. backlogged flows changes, actual time taken to serce bit
+		changes in inverse proportion
+	\item So far giving each flow equal BW share
+	\item Let $F_{i,k}$ and  ${L_i,k}$ be the finish/length resp. of the
+		k-th pkt to arrive on flow i
+	\item Let $R_{i,k}$ be the round in which it arrived. Evidently:
+	\begin{itemize}
+		 \item $F_{i,k}=max(F_{i,k-1},R_{i,k})+L_{i,k}$
+	\end{itemize}
+	\item Problem: calculation of $R_{i,k}$
+	\item Need to know relationshiop between R(t) and t when pkt arrives
+	\item In principle:
+	\begin{itemize}
+		\item $R(t_\delta t)=R_(t)+\frac{\delta t}{B_(t)}$
+		\item if B(t) is constant in interval $[t,t+ \delta t]$
+		\item Need to keep track of when B(t) changes
+		\begin{itemize}
+			\item When pkts arrive/depart
+		\end{itemize}
+	\end{itemize}
+	\item Let E(t) be time of last ecent before time t (arrival/depart)
+	\item R(E(t)) is round no. when last event occurred.
+	\item Suppose that at time t, pkt arrives, then:
+	\begin{itemize}
+		\item $R(t) <- R(E(t)) + \frac{t-E(t)}{B(t)}$ //Update value of
+			R(t)
+		\item If pkt arrives into empty buffer:
+		\item $B(t) <- B(E(t))+1$ // Now 1 more backlogged flow
+		\item Else
+		\item $B(t) <- B(E(t))
+		\item end if
+		\item E(t) <- t$
+	\end{itemize}
+	\item Suppose that at time t, pkt departs GPS discipline then:
+	\begin{itemize}
+		\item $R(t) <- R(E(t))+\frac{t-E(t)}{B(t)}$
+		\item If pkt leaves behind empty buffer then:
+		\item $B(t) <- B(E(t)) - 1$
+		\item else
+		\item B(t) <- B(E(t))
+		\item end if
+		\item E(t) <- t
+	\end{itemize}
+	\item If all calc done when pkt arrives, alg is:
+	\begin{enumerate}
+		\item Calc tentative value for R(t) (assuming no departures
+			since E(t)
+		\item Find pkt with min finish time $F_{min}$ and check if
+			$F_{min}< R(t)$
+	\end{enumerate}
+	\item If so:
+	\begin{itemize}
+		\item Calc its time of departure t as
+			$E(t)+B(E(t))(F_{min}-R(E(t)))$
+		\item Process departure as described earlier ($R(t)=F_{min}$)
+		\item $E(t)<-t$
+		 \item Go back to step 1
+	\end{itemize}
+	\item Otherwise:
+	\begin{itemize}
+		\item Process newly arrived cell as described earlier.
+	\end{itemize}
+\end{itemize}
+
+\subsection{Weighting the Queues}
+
+\begin{itemize}
+	\item Redefine B(t) as:
+	\begin{itemize}
+		\item $B(t)=\sum_{all Flows (i),active At Time (t)}^{} N\phi_i$
+	\end{itemize}
+	\item Service time in rounds of pkt is now $\frac{L_{i,k}}{N\phi_i}$
+	\item Finish time calc as:
+	\begin{itemize}
+		\item $F_{i,k}=max(F_{i,k-1},R_{i,k})+\frac{L_{i,k}}{N\phi_i}$
+	\end{itemize}
+	\item Since N acting as scaling factor, can set to unity:
+	\begin{itemize}
+		\item $B(t) = \sum_{all Flows (i), active At Time t}^{} \phi_i$
+		\item $F_{i,k}=max(F_{i,k-1},R_{i,k}) + \frac{L_{i,k}}{\phi_i}$
+	\end{itemize}
+\end{itemize}

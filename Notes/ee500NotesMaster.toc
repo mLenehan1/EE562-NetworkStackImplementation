@@ -1,20 +1,116 @@
 \babel@toc {UKenglish}{}
-\contentsline {section}{\numberline {1}Intro}{2}% 
-\contentsline {subsection}{\numberline {1.1}Userspace vs Kernel}{2}% 
-\contentsline {subsection}{\numberline {1.2}Monolithic vs Microkernel}{2}% 
-\contentsline {subsection}{\numberline {1.3}Loadable Modules}{2}% 
-\contentsline {subsection}{\numberline {1.4}OSI Model Limitations}{3}% 
-\contentsline {subsection}{\numberline {1.5}Bit Rates and Packet Rates}{3}% 
-\contentsline {subsection}{\numberline {1.6}Headers/Trailers}{3}% 
-\contentsline {subsection}{\numberline {1.7}Buffer Management}{3}% 
-\contentsline {section}{\numberline {2}Kernel Issues}{4}% 
-\contentsline {subsection}{\numberline {2.1}Kernel Programming Issues}{4}% 
-\contentsline {subsection}{\numberline {2.2}Memory Allocation in the Kernel}{4}% 
-\contentsline {subsection}{\numberline {2.3}Kernel Scheduling}{5}% 
-\contentsline {subsection}{\numberline {2.4}Symmetric Multiprocessing (SMP)}{5}% 
-\contentsline {subsection}{\numberline {2.5}Reentrancy and Preemption}{5}% 
-\contentsline {subsection}{\numberline {2.6}Writing reentrant code}{6}% 
-\contentsline {subsection}{\numberline {2.7}Spinlock}{6}% 
-\contentsline {subsection}{\numberline {2.8}Semaphores}{6}% 
-\contentsline {subsection}{\numberline {2.9}HW Interrupts}{7}% 
-\contentsline {subsection}{\numberline {2.10}Timer Interrupts}{7}% 
+\contentsline {section}{\numberline {1}Intro}{6}% 
+\contentsline {subsection}{\numberline {1.1}Userspace vs Kernel}{6}% 
+\contentsline {subsection}{\numberline {1.2}Monolithic vs Microkernel}{6}% 
+\contentsline {subsection}{\numberline {1.3}Loadable Modules}{6}% 
+\contentsline {subsection}{\numberline {1.4}OSI Model Limitations}{7}% 
+\contentsline {subsection}{\numberline {1.5}Bit Rates and Packet Rates}{7}% 
+\contentsline {subsection}{\numberline {1.6}Headers/Trailers}{7}% 
+\contentsline {subsection}{\numberline {1.7}Buffer Management}{7}% 
+\contentsline {section}{\numberline {2}Kernel Issues}{8}% 
+\contentsline {subsection}{\numberline {2.1}Kernel Programming Issues}{8}% 
+\contentsline {subsection}{\numberline {2.2}Memory Allocation in the Kernel}{8}% 
+\contentsline {subsection}{\numberline {2.3}Kernel Scheduling}{9}% 
+\contentsline {subsection}{\numberline {2.4}Symmetric Multiprocessing (SMP)}{9}% 
+\contentsline {subsection}{\numberline {2.5}Reentrancy and Preemption}{9}% 
+\contentsline {subsection}{\numberline {2.6}Writing reentrant code}{10}% 
+\contentsline {subsection}{\numberline {2.7}Spinlock}{10}% 
+\contentsline {subsection}{\numberline {2.8}Semaphores}{10}% 
+\contentsline {subsection}{\numberline {2.9}HW Interrupts}{11}% 
+\contentsline {subsection}{\numberline {2.10}Timer Interrupts}{11}% 
+\contentsline {section}{\numberline {3}Weighted Fair Queueing}{11}% 
+\contentsline {subsection}{\numberline {3.1}Max-Min Fairness}{11}% 
+\contentsline {subsection}{\numberline {3.2}Quality of Service Guarantees}{12}% 
+\contentsline {subsection}{\numberline {3.3}Generalised Processor Sharing}{12}% 
+\contentsline {subsection}{\numberline {3.4}Weigthed Fair Queuing}{13}% 
+\contentsline {subsection}{\numberline {3.5}Weighting the Queues}{14}% 
+\contentsline {section}{\numberline {4}Socket Buffers}{14}% 
+\contentsline {subsection}{\numberline {4.1}Socket Buffers in Linux}{14}% 
+\contentsline {subsection}{\numberline {4.2}Non-Linear Socket Buffers in Linux}{15}% 
+\contentsline {subsection}{\numberline {4.3}Hack for 64-bit Systems}{16}% 
+\contentsline {section}{\numberline {5}NIC Drivers}{17}% 
+\contentsline {subsection}{\numberline {5.1}Linux Network Device Drivers}{17}% 
+\contentsline {subsection}{\numberline {5.2}Initialisation}{17}% 
+\contentsline {subsection}{\numberline {5.3}Packet Reception}{17}% 
+\contentsline {subsection}{\numberline {5.4}eth\_type\_trans()}{17}% 
+\contentsline {subsection}{\numberline {5.5}Reaching Layer 3 in Linux}{17}% 
+\contentsline {section}{\numberline {6}L2 -> L3}{17}% 
+\contentsline {subsection}{\numberline {6.1}Network RX softirq}{17}% 
+\contentsline {subsection}{\numberline {6.2}Offload to the IP Packet Handler}{17}% 
+\contentsline {subsection}{\numberline {6.3}Read-Copy-Update (RCU)}{17}% 
+\contentsline {subsection}{\numberline {6.4}Bridge Handling}{17}% 
+\contentsline {subsection}{\numberline {6.5}NAPI Drivers}{17}% 
+\contentsline {section}{\numberline {7}Netfilter}{17}% 
+\contentsline {subsection}{\numberline {7.1}Packet Transmission}{17}% 
+\contentsline {subsection}{\numberline {7.2}Netfilter}{17}% 
+\contentsline {subsection}{\numberline {7.3}IP Stack in Linux Kernel}{17}% 
+\contentsline {subsection}{\numberline {7.4}Using the netfilter hooks}{17}% 
+\contentsline {section}{\numberline {8}Netfilter Hooks}{17}% 
+\contentsline {subsection}{\numberline {8.1}The IP Stack Interface to Netfilter}{17}% 
+\contentsline {section}{\numberline {9}Packet Processing}{17}% 
+\contentsline {subsection}{\numberline {9.1}The Forwarding Information Base}{17}% 
+\contentsline {subsection}{\numberline {9.2}Aside: MPLS}{17}% 
+\contentsline {subsection}{\numberline {9.3}Longest Prefix Match and LC Tries}{17}% 
+\contentsline {subsection}{\numberline {9.4}Fragmentation and Re-Assembly}{17}% 
+\contentsline {section}{\numberline {10}802.11}{17}% 
+\contentsline {subsection}{\numberline {10.1}Wireless - 802.11}{17}% 
+\contentsline {subsection}{\numberline {10.2}802.11 Configuration}{17}% 
+\contentsline {subsection}{\numberline {10.3}Data Transmission in 802.11}{17}% 
+\contentsline {subsection}{\numberline {10.4}Data Reception in 802.11}{17}% 
+\contentsline {section}{\numberline {11}Router Issues}{17}% 
+\contentsline {subsection}{\numberline {11.1}Layer 3 in Routers}{17}% 
+\contentsline {subsection}{\numberline {11.2}Router Functions}{17}% 
+\contentsline {subsection}{\numberline {11.3}"Soft Router" Architecture}{17}% 
+\contentsline {subsection}{\numberline {11.4}"Edge Router" Architecture}{17}% 
+\contentsline {subsection}{\numberline {11.5}"Backbone Router" Architecture}{17}% 
+\contentsline {subsection}{\numberline {11.6}History of Router Architectures}{17}% 
+\contentsline {section}{\numberline {12}IPv6}{17}% 
+\contentsline {subsection}{\numberline {12.1}IPv6}{17}% 
+\contentsline {subsection}{\numberline {12.2}IPv6\_rcv()}{17}% 
+\contentsline {subsection}{\numberline {12.3}IPv6 Sending Data}{17}% 
+\contentsline {subsection}{\numberline {12.4}Fragmentation in IPv6}{17}% 
+\contentsline {section}{\numberline {13}Layer $\ge $ 4}{17}% 
+\contentsline {subsection}{\numberline {13.1}Sockets in the Linux Kernel}{17}% 
+\contentsline {subsection}{\numberline {13.2}TCP}{17}% 
+\contentsline {subsection}{\numberline {13.3}UDP}{17}% 
+\contentsline {subsection}{\numberline {13.4}TCP-Friendly Transport Layer Protocols}{17}% 
+\contentsline {section}{\numberline {14}Signalling}{17}% 
+\contentsline {subsection}{\numberline {14.1}Signalling Protocols}{17}% 
+\contentsline {subsection}{\numberline {14.2}End-to-End Signalling}{17}% 
+\contentsline {subsection}{\numberline {14.3}ICMP}{17}% 
+\contentsline {section}{\numberline {15}QoS}{17}% 
+\contentsline {subsection}{\numberline {15.1}Network QoS Support}{17}% 
+\contentsline {subsection}{\numberline {15.2}MPLS Signalling}{17}% 
+\contentsline {section}{\numberline {16}Binary Trees}{17}% 
+\contentsline {subsection}{\numberline {16.1}Binary Trees}{17}% 
+\contentsline {subsection}{\numberline {16.2}Balanced Tree}{17}% 
+\contentsline {subsection}{\numberline {16.3}Unbalanced Tree}{17}% 
+\contentsline {subsection}{\numberline {16.4}Tree Rotation}{17}% 
+\contentsline {subsection}{\numberline {16.5}Rebalanced Tree}{17}% 
+\contentsline {subsection}{\numberline {16.6}Aside: Trees and Tries}{17}% 
+\contentsline {subsection}{\numberline {16.7}Trie Compression}{17}% 
+\contentsline {subsection}{\numberline {16.8}Patricia Tree}{17}% 
+\contentsline {subsection}{\numberline {16.9}Red-Black Tree}{17}% 
+\contentsline {section}{\numberline {17}Advanced Topics}{17}% 
+\contentsline {subsection}{\numberline {17.1}Dynamic Routing Protocols}{17}% 
+\contentsline {subsection}{\numberline {17.2}Multicast}{17}% 
+\contentsline {subsection}{\numberline {17.3}RTP}{17}% 
+\contentsline {subsection}{\numberline {17.4}Programmable Networks}{17}% 
+\contentsline {subsection}{\numberline {17.5}Software Defined Networking}{17}% 
+\contentsline {subsection}{\numberline {17.6}OpenFlow}{17}% 
+\contentsline {subsection}{\numberline {17.7}Network Function Virtualisation}{17}% 
+\contentsline {subsubsection}{\numberline {17.7.1}NFV Example}{17}% 
+\contentsline {subsubsection}{\numberline {17.7.2}SDN/NFV Case Study}{17}% 
+\contentsline {subsection}{\numberline {17.8}Smart Network Interfaces}{17}% 
+\contentsline {subsection}{\numberline {17.9}"Software Acceleration"}{17}% 
+\contentsline {subsection}{\numberline {17.10}Generic Segmentation Offload}{17}% 
+\contentsline {subsection}{\numberline {17.11}Generic Receive Offload}{17}% 
+\contentsline {subsection}{\numberline {17.12}Other Accelerations}{17}% 
+\contentsline {subsection}{\numberline {17.13}Receive Side Scaling}{17}% 
+\contentsline {subsection}{\numberline {17.14}Receive Packet Steering}{17}% 
+\contentsline {subsection}{\numberline {17.15}Receive Flow Steering}{17}% 
+\contentsline {subsection}{\numberline {17.16}Aside: net\_device\_ops}{17}% 
+\contentsline {subsection}{\numberline {17.17}Transmit Packet Steering}{17}% 
+\contentsline {subsection}{\numberline {17.18}eXpress Data Path (XDP)}{17}% 
+\contentsline {section}{\numberline {18}Conclusions}{17}% 
+\contentsline {subsection}{\numberline {18.1}The Myth of the Dumb Router}{17}% 
